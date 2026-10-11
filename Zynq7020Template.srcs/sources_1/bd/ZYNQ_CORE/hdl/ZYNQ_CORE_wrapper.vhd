@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
---Date        : Sat Oct 10 10:17:24 2026
+--Date        : Sat Oct 10 22:16:59 2026
 --Host        : DESKTOP-IGGLRT5 running 64-bit major release  (build 9200)
 --Command     : generate_target ZYNQ_CORE_wrapper.bd
 --Design      : ZYNQ_CORE_wrapper
@@ -34,7 +34,9 @@ entity ZYNQ_CORE_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    GPIO_0_0_tri_io : inout STD_LOGIC_VECTOR ( 0 to 0 )
+    GPIO_0_0_tri_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
+    UART0_RX : in STD_LOGIC;
+    UART0_TX : out STD_LOGIC
   );
 end ZYNQ_CORE_wrapper;
 
@@ -64,7 +66,9 @@ architecture STRUCTURE of ZYNQ_CORE_wrapper is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     GPIO_0_0_tri_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     GPIO_0_0_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
-    GPIO_0_0_tri_t : out STD_LOGIC_VECTOR ( 0 to 0 )
+    GPIO_0_0_tri_t : out STD_LOGIC_VECTOR ( 0 to 0 );
+    UART0_TX : out STD_LOGIC;
+    UART0_RX : in STD_LOGIC
   );
   end component ZYNQ_CORE;
   component IOBUF is
@@ -112,6 +116,8 @@ ZYNQ_CORE_i: component ZYNQ_CORE
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       GPIO_0_0_tri_i(0) => GPIO_0_0_tri_i_0(0),
       GPIO_0_0_tri_o(0) => GPIO_0_0_tri_o_0(0),
-      GPIO_0_0_tri_t(0) => GPIO_0_0_tri_t_0(0)
+      GPIO_0_0_tri_t(0) => GPIO_0_0_tri_t_0(0),
+      UART0_RX => UART0_RX,
+      UART0_TX => UART0_TX
     );
 end STRUCTURE;

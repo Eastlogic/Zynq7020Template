@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-// Date        : Sat Oct 10 10:18:45 2026
+// Date        : Sat Oct 10 22:18:20 2026
 // Host        : DESKTOP-IGGLRT5 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               d:/ARCHIVE/Xilinx_Vivado_2018_2/Zynq7020Template/Zynq7020Template.srcs/sources_1/bd/ZYNQ_CORE/ip/ZYNQ_CORE_processing_system7_0_0/ZYNQ_CORE_processing_system7_0_0_stub.v
+//               D:/ARCHIVE/Xilinx_Vivado_2018_2/Zynq7020Template/Zynq7020Template.srcs/sources_1/bd/ZYNQ_CORE/ip/ZYNQ_CORE_processing_system7_0_0/ZYNQ_CORE_processing_system7_0_0_stub.v
 // Design      : ZYNQ_CORE_processing_system7_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1
@@ -14,14 +14,16 @@
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "processing_system7_v5_5_processing_system7,Vivado 2018.2" *)
-module ZYNQ_CORE_processing_system7_0_0(GPIO_I, GPIO_O, GPIO_T, FCLK_CLK0, FCLK_RESET0_N, 
-  MIO, DDR_CAS_n, DDR_CKE, DDR_Clk_n, DDR_Clk, DDR_CS_n, DDR_DRSTB, DDR_ODT, DDR_RAS_n, DDR_WEB, 
-  DDR_BankAddr, DDR_Addr, DDR_VRN, DDR_VRP, DDR_DM, DDR_DQ, DDR_DQS_n, DDR_DQS, PS_SRSTB, PS_CLK, 
-  PS_PORB)
-/* synthesis syn_black_box black_box_pad_pin="GPIO_I[0:0],GPIO_O[0:0],GPIO_T[0:0],FCLK_CLK0,FCLK_RESET0_N,MIO[53:0],DDR_CAS_n,DDR_CKE,DDR_Clk_n,DDR_Clk,DDR_CS_n,DDR_DRSTB,DDR_ODT,DDR_RAS_n,DDR_WEB,DDR_BankAddr[2:0],DDR_Addr[14:0],DDR_VRN,DDR_VRP,DDR_DM[3:0],DDR_DQ[31:0],DDR_DQS_n[3:0],DDR_DQS[3:0],PS_SRSTB,PS_CLK,PS_PORB" */;
+module ZYNQ_CORE_processing_system7_0_0(GPIO_I, GPIO_O, GPIO_T, UART0_TX, UART0_RX, 
+  FCLK_CLK0, FCLK_RESET0_N, MIO, DDR_CAS_n, DDR_CKE, DDR_Clk_n, DDR_Clk, DDR_CS_n, DDR_DRSTB, 
+  DDR_ODT, DDR_RAS_n, DDR_WEB, DDR_BankAddr, DDR_Addr, DDR_VRN, DDR_VRP, DDR_DM, DDR_DQ, DDR_DQS_n, 
+  DDR_DQS, PS_SRSTB, PS_CLK, PS_PORB)
+/* synthesis syn_black_box black_box_pad_pin="GPIO_I[0:0],GPIO_O[0:0],GPIO_T[0:0],UART0_TX,UART0_RX,FCLK_CLK0,FCLK_RESET0_N,MIO[53:0],DDR_CAS_n,DDR_CKE,DDR_Clk_n,DDR_Clk,DDR_CS_n,DDR_DRSTB,DDR_ODT,DDR_RAS_n,DDR_WEB,DDR_BankAddr[2:0],DDR_Addr[14:0],DDR_VRN,DDR_VRP,DDR_DM[3:0],DDR_DQ[31:0],DDR_DQS_n[3:0],DDR_DQS[3:0],PS_SRSTB,PS_CLK,PS_PORB" */;
   input [0:0]GPIO_I;
   output [0:0]GPIO_O;
   output [0:0]GPIO_T;
+  output UART0_TX;
+  input UART0_RX;
   output FCLK_CLK0;
   output FCLK_RESET0_N;
   inout [53:0]MIO;

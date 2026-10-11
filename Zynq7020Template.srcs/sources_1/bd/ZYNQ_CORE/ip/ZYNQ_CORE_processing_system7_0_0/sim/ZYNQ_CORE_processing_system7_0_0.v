@@ -59,6 +59,8 @@ module ZYNQ_CORE_processing_system7_0_0 (
 GPIO_I, 
 GPIO_O, 
 GPIO_T, 
+UART0_TX, 
+UART0_RX, 
 FCLK_CLK0, 
 FCLK_RESET0_N, 
 MIO, 
@@ -86,6 +88,8 @@ PS_PORB
 input [0 : 0] GPIO_I;
 output [0 : 0] GPIO_O;
 output [0 : 0] GPIO_T;
+output UART0_TX;
+input UART0_RX;
 output FCLK_CLK0;
 output FCLK_RESET0_N;
 input [53 : 0] MIO;

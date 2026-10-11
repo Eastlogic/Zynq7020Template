@@ -680,6 +680,8 @@
   GPIO_I,
   GPIO_O,
   GPIO_T,
+  UART0_TX,
+  UART0_RX,
   FCLK_CLK0,
   FCLK_RESET0_N,
   MIO,
@@ -769,6 +771,8 @@
       input  [0 : 0] GPIO_I;
       output  [0 : 0] GPIO_O;
       output  [0 : 0] GPIO_T;
+      output  UART0_TX;
+      input  UART0_RX;
       output  FCLK_CLK0;
       output  FCLK_RESET0_N;
       inout  [53 : 0] MIO;
@@ -797,6 +801,7 @@
 
       reg [0 : 0] GPIO_O;
       reg [0 : 0] GPIO_T;
+      reg UART0_TX;
       reg FCLK_CLK0;
       reg FCLK_RESET0_N;
       string ip_name;

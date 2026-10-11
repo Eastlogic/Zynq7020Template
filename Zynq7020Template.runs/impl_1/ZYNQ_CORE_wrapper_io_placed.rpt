@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date                      : Sat Oct 10 10:20:41 2026
+| Date                      : Sat Oct 10 23:16:07 2026
 | Host                      : DESKTOP-IGGLRT5 running 64-bit major release  (build 9200)
 | Command                   : report_io -file ZYNQ_CORE_wrapper_io_placed.rpt
 | Design                    : ZYNQ_CORE_wrapper
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|           131 |
+|           133 |
 +---------------+
 
 
@@ -315,7 +315,7 @@ Table of Contents
 | L14        |                    |            | VCCINT                  | VCCINT      |                   |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | L15        |                    |            | GND                     | GND         |                   |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | L16        |                    | High Range | IO_L3N_T0_DQS_34        | User IO     |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| L17        |                    | High Range | IO_L4P_T0_34            | User IO     |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| L17        | UART0_TX           | High Range | IO_L4P_T0_34            | OUTPUT      | LVCMOS33          |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | L18        |                    | High Range | IO_L12P_T1_MRCC_34      | User IO     |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | L19        |                    | High Range | IO_L12N_T1_MRCC_34      | User IO     |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | L20        |                    | High Range | VCCO_34                 | VCCO        |                   |      34 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
@@ -337,7 +337,7 @@ Table of Contents
 | M14        |                    |            | GND                     | GND         |                   |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | M15        |                    | High Range | IO_L6P_T0_34            | User IO     |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M16        |                    | High Range | IO_L6N_T0_VREF_34       | User IO     |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| M17        |                    | High Range | IO_L4N_T0_34            | User IO     |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| M17        | UART0_RX           | High Range | IO_L4N_T0_34            | INPUT       | LVCMOS33          |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | M18        |                    |            | GND                     | GND         |                   |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | M19        |                    | High Range | IO_L13P_T2_MRCC_34      | User IO     |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M20        |                    | High Range | IO_L13N_T2_MRCC_34      | User IO     |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

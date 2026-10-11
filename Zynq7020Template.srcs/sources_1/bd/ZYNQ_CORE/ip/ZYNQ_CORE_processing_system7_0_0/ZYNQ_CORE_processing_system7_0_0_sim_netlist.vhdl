@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Sat Oct 10 10:18:45 2026
+-- Date        : Sat Oct 10 22:18:21 2026
 -- Host        : DESKTOP-IGGLRT5 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               d:/ARCHIVE/Xilinx_Vivado_2018_2/Zynq7020Template/Zynq7020Template.srcs/sources_1/bd/ZYNQ_CORE/ip/ZYNQ_CORE_processing_system7_0_0/ZYNQ_CORE_processing_system7_0_0_sim_netlist.vhdl
+--               D:/ARCHIVE/Xilinx_Vivado_2018_2/Zynq7020Template/Zynq7020Template.srcs/sources_1/bd/ZYNQ_CORE/ip/ZYNQ_CORE_processing_system7_0_0/ZYNQ_CORE_processing_system7_0_0_sim_netlist.vhdl
 -- Design      : ZYNQ_CORE_processing_system7_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -817,7 +817,7 @@ entity ZYNQ_CORE_processing_system7_0_0_processing_system7_v5_5_processing_syste
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of ZYNQ_CORE_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is "processing_system7_v5_5_processing_system7";
   attribute POWER : string;
-  attribute POWER of ZYNQ_CORE_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><PLL domain={Processor} vco={1333.333} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1600.000} />/>";
+  attribute POWER of ZYNQ_CORE_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><IO interface={UART} ioStandard={} bidis={0} ioBank={} clockFreq={100.000000} usageRate={0.5} /><PLL domain={Processor} vco={1333.333} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1600.000} />/>";
   attribute USE_TRACE_DATA_EDGE_DETECTOR : integer;
   attribute USE_TRACE_DATA_EDGE_DETECTOR of ZYNQ_CORE_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is 0;
 end ZYNQ_CORE_processing_system7_0_0_processing_system7_v5_5_processing_system7;
@@ -2863,6 +2863,8 @@ entity ZYNQ_CORE_processing_system7_0_0 is
     GPIO_I : in STD_LOGIC_VECTOR ( 0 to 0 );
     GPIO_O : out STD_LOGIC_VECTOR ( 0 to 0 );
     GPIO_T : out STD_LOGIC_VECTOR ( 0 to 0 );
+    UART0_TX : out STD_LOGIC;
+    UART0_RX : in STD_LOGIC;
     FCLK_CLK0 : out STD_LOGIC;
     FCLK_RESET0_N : out STD_LOGIC;
     MIO : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -3098,7 +3100,6 @@ architecture STRUCTURE of ZYNQ_CORE_processing_system7_0_0 is
   signal NLW_inst_TTC1_WAVE2_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_UART0_DTRN_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_UART0_RTSN_UNCONNECTED : STD_LOGIC;
-  signal NLW_inst_UART0_TX_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_UART1_DTRN_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_UART1_RTSN_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_UART1_TX_UNCONNECTED : STD_LOGIC;
@@ -3329,7 +3330,7 @@ architecture STRUCTURE of ZYNQ_CORE_processing_system7_0_0 is
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of inst : label is "ZYNQ_CORE_processing_system7_0_0.hwdef";
   attribute POWER : string;
-  attribute POWER of inst : label is "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><PLL domain={Processor} vco={1333.333} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1600.000} />/>";
+  attribute POWER of inst : label is "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><IO interface={UART} ioStandard={} bidis={0} ioBank={} clockFreq={100.000000} usageRate={0.5} /><PLL domain={Processor} vco={1333.333} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1600.000} />/>";
   attribute USE_TRACE_DATA_EDGE_DETECTOR : integer;
   attribute USE_TRACE_DATA_EDGE_DETECTOR of inst : label is 0;
   attribute X_INTERFACE_INFO : string;
@@ -3353,6 +3354,8 @@ architecture STRUCTURE of ZYNQ_CORE_processing_system7_0_0 is
   attribute X_INTERFACE_INFO of PS_PORB : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
   attribute X_INTERFACE_PARAMETER of PS_PORB : signal is "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false";
   attribute X_INTERFACE_INFO of PS_SRSTB : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
+  attribute X_INTERFACE_INFO of UART0_RX : signal is "xilinx.com:interface:uart:1.0 UART_0 RxD";
+  attribute X_INTERFACE_INFO of UART0_TX : signal is "xilinx.com:interface:uart:1.0 UART_0 TxD";
   attribute X_INTERFACE_INFO of DDR_Addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
   attribute X_INTERFACE_INFO of DDR_BankAddr : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
   attribute X_INTERFACE_INFO of DDR_DM : signal is "xilinx.com:interface:ddrx:1.0 DDR DM";
@@ -4034,8 +4037,8 @@ inst: entity work.ZYNQ_CORE_processing_system7_0_0_processing_system7_v5_5_proce
       UART0_DTRN => NLW_inst_UART0_DTRN_UNCONNECTED,
       UART0_RIN => '0',
       UART0_RTSN => NLW_inst_UART0_RTSN_UNCONNECTED,
-      UART0_RX => '1',
-      UART0_TX => NLW_inst_UART0_TX_UNCONNECTED,
+      UART0_RX => UART0_RX,
+      UART0_TX => UART0_TX,
       UART1_CTSN => '0',
       UART1_DCDN => '0',
       UART1_DSRN => '0',

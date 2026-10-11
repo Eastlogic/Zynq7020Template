@@ -3,13 +3,17 @@
    guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
 #  -string -flagsOSRD
 preplace port DDR -pg 1 -y -40 -defaultsOSRD
+preplace port UART0_TX -pg 1 -y 20 -defaultsOSRD
 preplace port GPIO_0_0 -pg 1 -y -60 -defaultsOSRD
+preplace port UART0_RX -pg 1 -y 40 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y -20 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -y -20 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 1 1 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 1 1 NJ
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 10 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 1 1 N
+preplace netloc UART0_TX 1 1 1 N
+preplace netloc UART0_RX 1 0 2 -120J 140 180
+preplace netloc processing_system7_0_FIXED_IO 1 1 1 N
 preplace netloc processing_system7_0_GPIO_0 1 1 1 N
-levelinfo -pg 1 0 210 420 -top -120 -bot 200
+levelinfo -pg 1 -140 30 200 -top -130 -bot 210
 ",
 }
 {

@@ -61,6 +61,8 @@ module ZYNQ_CORE_processing_system7_0_0 (
   GPIO_I,
   GPIO_O,
   GPIO_T,
+  UART0_TX,
+  UART0_RX,
   FCLK_CLK0,
   FCLK_RESET0_N,
   MIO,
@@ -92,6 +94,10 @@ input wire [0 : 0] GPIO_I;
 output wire [0 : 0] GPIO_O;
 (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_0 TRI_T" *)
 output wire [0 : 0] GPIO_T;
+(* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART_0 TxD" *)
+output wire UART0_TX;
+(* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART_0 RxD" *)
+input wire UART0_RX;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_CLK0, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN ZYNQ_CORE_processing_system7_0_0_FCLK_CLK0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK0 CLK" *)
 output wire FCLK_CLK0;
@@ -330,12 +336,12 @@ inout wire PS_PORB;
     .SPI1_SS_T(),
     .UART0_DTRN(),
     .UART0_RTSN(),
-    .UART0_TX(),
+    .UART0_TX(UART0_TX),
     .UART0_CTSN(1'B0),
     .UART0_DCDN(1'B0),
     .UART0_DSRN(1'B0),
     .UART0_RIN(1'B0),
-    .UART0_RX(1'B1),
+    .UART0_RX(UART0_RX),
     .UART1_DTRN(),
     .UART1_RTSN(),
     .UART1_TX(),

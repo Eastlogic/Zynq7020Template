@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
---Date        : Sat Oct 10 10:17:24 2026
+--Date        : Sat Oct 10 22:16:59 2026
 --Host        : DESKTOP-IGGLRT5 running 64-bit major release  (build 9200)
 --Command     : generate_target ZYNQ_CORE.bd
 --Design      : ZYNQ_CORE
@@ -36,7 +36,9 @@ entity ZYNQ_CORE is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     GPIO_0_0_tri_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     GPIO_0_0_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
-    GPIO_0_0_tri_t : out STD_LOGIC_VECTOR ( 0 to 0 )
+    GPIO_0_0_tri_t : out STD_LOGIC_VECTOR ( 0 to 0 );
+    UART0_RX : in STD_LOGIC;
+    UART0_TX : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
   attribute CORE_GENERATION_INFO of ZYNQ_CORE : entity is "ZYNQ_CORE,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=ZYNQ_CORE,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=1,numReposBlks=1,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
@@ -50,6 +52,8 @@ architecture STRUCTURE of ZYNQ_CORE is
     GPIO_I : in STD_LOGIC_VECTOR ( 0 to 0 );
     GPIO_O : out STD_LOGIC_VECTOR ( 0 to 0 );
     GPIO_T : out STD_LOGIC_VECTOR ( 0 to 0 );
+    UART0_TX : out STD_LOGIC;
+    UART0_RX : in STD_LOGIC;
     FCLK_CLK0 : out STD_LOGIC;
     FCLK_RESET0_N : out STD_LOGIC;
     MIO : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -160,6 +164,8 @@ processing_system7_0: component ZYNQ_CORE_processing_system7_0_0
       MIO(53 downto 0) => FIXED_IO_mio(53 downto 0),
       PS_CLK => FIXED_IO_ps_clk,
       PS_PORB => FIXED_IO_ps_porb,
-      PS_SRSTB => FIXED_IO_ps_srstb
+      PS_SRSTB => FIXED_IO_ps_srstb,
+      UART0_RX => UART0_RX,
+      UART0_TX => UART0_TX
     );
 end STRUCTURE;
